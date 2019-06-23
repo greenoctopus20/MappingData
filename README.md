@@ -1,7 +1,7 @@
 # MappingData
 
 <h3>
-  Visualization data of all earthquakes in the last 30 days each colour refers to the magnitude scale  
+  Visualizing data set of all earthquakes in the last 30 days each colour refers to the magnitude scale 
 </h3>
 <p align="center">
   <img src="Output.png" width="1025" height="512" title="OutputMap">
