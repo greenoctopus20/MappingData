@@ -32,26 +32,37 @@ function setup() {
   colors.push(color(255,255,255));
 
   createCanvas(1025,512);
+
   image(mapimg,0,0);  
   translate(width/2, height/2);
   imageMode(CENTER);
   var cx = mercatorX(clon);
   var cy = mercatorY(clat);
 
-  for (var i = 0; i < loadedData.length;i++){
-    var data = loadedData[i].split(/,/);
-    //console.log(data);
-    lon = data[2];
-    lat = data[1];
-    magColor = magnitutude(float(data[4]))
-
-    var x = mercatorX(lon) - cx;
-    var y = mercatorY(lat) - cy;
-    fill(colors[magColor]);
-    ellipse(x,y,10,10);
+  for (var i = 0; i < loadedData.length ;i++){
+    
+      var data = loadedData[i].split(/,/);
+      //console.log(data);
+      lon = data[2];
+      lat = data[1];
+      magColor = magnitutude(float(data[4]))
+      var x = mercatorX(lon) - cx;
+      var y = mercatorY(lat) - cy;
+      fill(colors[magColor]);
+      ellipse(x,y,10,10);
+      console.log(x + " , " + y);
+      
+    
   }
+  
 
 }
+function draw() {
+  //pieChart(300, angles);
+
+}
+
+
 
 
 function mercatorX(lon){
@@ -70,25 +81,20 @@ function mercatorY(lat){
 }
 
 
-
+//function for magnitude scale
 function magnitutude(value){
-  console.log("step");
     if (value <= 2.5) {
       //scale 1 and 2 : White
      return 0;
     }
-
     if (value >= 2.5 && value <= 5.4) {
       //scale 3,4 and 5 : Yellow
       return 1;
     }
-
     if (value >= 5.5 && value <= 6) {
       //sclae 5 : Orange
-    
       return 2;
     }
-
     if (value >= 6.1 && value <= 6.9) {
       //scale 6 : Green
      
@@ -102,14 +108,10 @@ function magnitutude(value){
 
     if (value >= 8.0 ) {
       //scale 8 : red
-      
       return 5;
     }
     else
     {
-     console.log(value);
-     return 0;
+      return 0;
     }
-     
 }
-
