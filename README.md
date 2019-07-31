@@ -8,7 +8,7 @@
 </p>
 <p>
   Mapping data to a map using <b>p5.js</b>
-  Data used : <link>https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php</link>
+ <p> Data used : <link>https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php</link> </p>
 </p>
 <br>
 <p>
